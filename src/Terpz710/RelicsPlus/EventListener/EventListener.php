@@ -15,7 +15,7 @@ class EventListener implements Listener {
     public function __construct($plugin, RelicsManager $relicsManager) {
         $this->relicsManager = $relicsManager;
         $this->plugin = $plugin;
-        $this->plugin->getServer()->getPluginManager()->registerEvents($this, $this->plugin);
+        $this->plugin->getServer()->getPluginManager()->registerEvents($this);
     }
 
     public function onBlockBreak(BlockBreakEvent $event) {
