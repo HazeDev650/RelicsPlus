@@ -23,8 +23,7 @@ class RelicsManager implements Listener {
         $relic->setCustomName("$rarity Relic");
 
         $rarityTag = new StringTag("Rarity", $rarity);
-        $nbt = new CompoundTag();
-        $nbt->setTag($rarityTag);
+        $nbt = new CompoundTag("", [$rarityTag]);
         $relic->setNamedTag($nbt);
 
         return $relic;
@@ -52,16 +51,16 @@ class RelicsManager implements Listener {
                     if (isset($this->rewards[$rarity])) {
                         $rewardData = $this->rewards[$rarity];
                         $parsedItem = StringToItemParser::getInstance()->parse($rewardData['item']);
-                        $item = $parsedItem->getItem();
-
+                        $rewardItem = $parsedItem->getResult();
+                        
                         foreach ($rewardData['enchantments'] as $enchantmentString) {
                             $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantmentString);
                             if ($enchantment !== null) {
-                                $item->addEnchantment($enchantment);
+                                $rewardItem->addEnchantment($enchantment);
                             }
                         }
 
-                        $player->getInventory()->addItem($item);
+                        $player->getInventory()->addItem($rewardItem);
                         $player->getInventory()->removeItem($item);
                         $player->sendMessage("You claimed a $rarity Relic and received your reward!");
                     } else {
