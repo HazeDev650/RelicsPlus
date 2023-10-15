@@ -5,7 +5,7 @@ namespace Terpz710\RelicsPlus;
 use pocketmine\event\player\PlayerInteractEvent;
 use pocketmine\event\Listener;
 use pocketmine\item\StringToItemParser;
-use pocketmine\item\StringToEnchantmentParser;
+use pocketmine\item\enchantment\StringToEnchantmentParser;
 use pocketmine\item\VanillaItems;
 use pocketmine\item\Item;
 use pocketmine\nbt\tag\StringTag;
