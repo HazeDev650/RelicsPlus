@@ -49,7 +49,7 @@ class RelicsManager implements Listener {
                     if (isset($this->rewards[$rarity])) {
                         $rewardData = $this->rewards[$rarity];
                         $parsedItem = StringToItemParser::getInstance()->parse($rewardData['item']);
-                        $rewardItem = $parsedItem->getResult();
+                        $rewardItem = $parsedItem->getItem();
                         
                         foreach ($rewardData['enchantments'] as $enchantmentString) {
                             $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantmentString);
