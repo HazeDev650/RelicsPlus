@@ -7,6 +7,7 @@ use pocketmine\event\Listener;
 use pocketmine\item\StringToItemParser;
 use pocketmine\item\StringToEnchantmentParser;
 use pocketmine\item\VanillaItems;
+use pocketmine\item\Item;
 use pocketmine\nbt\tag\StringTag;
 use pocketmine\nbt\tag\CompoundTag;
 use pocketmine\player\Player;
