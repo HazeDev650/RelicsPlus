@@ -15,8 +15,6 @@ use pocketmine\utils\Config;
 
 class RelicsManager implements Listener {
 
-    private $rewards;
-
     public static function createPrismarineRelic(string $rarity): Item {
         $relic = VanillaItems::PRISMARINE_SHARD();
 
