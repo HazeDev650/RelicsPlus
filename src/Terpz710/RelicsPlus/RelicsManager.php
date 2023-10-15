@@ -46,7 +46,7 @@ class RelicsManager implements Listener {
         if ($item->getCustomName() !== null) {
             if (strpos($item->getCustomName(), " Relic") !== false) {
                 $nbt = $item->getNamedTag();
-                if ($nbt !== null && $nbt->hasTag("Rarity", StringTag::class)) {
+                if ($nbt !== null && $nbt->getTag("Rarity", StringTag::class)) {
                     $rarity = $nbt->getString("Rarity");
 
                     if (isset($this->rewards[$rarity])) {
