@@ -18,7 +18,14 @@ class RelicsManager implements Listener {
     public static function createPrismarineRelic(string $rarity): Item {
         $relic = VanillaItems::PRISMARINE_SHARD();
 
-        $relic->setCustomName("$rarity Relic");
+        $relic->setCustomName("{$rarity} Relic");
+
+        $lore = [
+            "A relic of $rarity rarity.",
+            "Right-click to claim a reward!"
+        ];
+
+        $relic->setLore($lore);
 
         $nbt = new CompoundTag();
         $nbt->setString("Rarity", $rarity);
