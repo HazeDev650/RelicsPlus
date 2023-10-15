@@ -20,7 +20,7 @@ class RelicsManager implements Listener {
 
         $relic->setCustomName("$rarity Relic");
 
-        $rarityTag = new StringTag($rarity, "Rarity");
+        $rarityTag = new StringTag($rarity);
         $nbt = new CompoundTag("", [$rarityTag]);
         $relic->setNamedTag($nbt);
 
