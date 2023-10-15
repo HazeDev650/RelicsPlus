@@ -49,8 +49,8 @@ class RelicsManager implements Listener {
                     if (isset($this->rewards[$rarity])) {
                         $rewardData = $this->rewards[$rarity];
                         $parsedItem = StringToItemParser::getInstance()->parse($rewardData['item']);
-                        $rewardItem = $parsedItem->getTypeId();
                         
+                        $rewardItem = clone $parsedItem;
                         foreach ($rewardData['enchantments'] as $enchantmentString) {
                             $enchantment = StringToEnchantmentParser::getInstance()->parse($enchantmentString);
                             if ($enchantment !== null) {
